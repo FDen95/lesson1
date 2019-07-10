@@ -9,7 +9,7 @@ function start() {
     time = prompt("Введите дату в формате YYYY-MM-DD", "");
 }
 
-start();
+// start();
 
 let appData = {
     budgetMonth: money,
@@ -53,19 +53,32 @@ let appData = {
         }
     }, 
     chooseIncome: function() {
-        let items = prompt("Что принесёт дополнительный доход? (Перечислите через запятую)", "");
+        let items;
+        do {
+            items = prompt("Что принесёт дополнительный доход? (Перечислите через запятую)", "");
+        } while(typeof(items) != 'string' || items.length == 0);
         appData.income = items.split(", ");
+        appData.income.push(prompt('Может что-то ещё?'));
+        appData.income.sort();
+        let str = "Способы доп. заработка:\n";
+        appData.income.forEach( function(item, i){
+            str += (i + 1) + ". " + item + "\n";
+        });
+        alert(str);
+    },
+    moneyPerDay: function () {
+        appData.moneyPerDay = (appData.detectDayBudget(appData.budgetMonth)).toFixed(1);
+
+        if (appData.moneyPerDay < 100) {
+            alert("Минимальный уровень достатка");
+        } else if (appData.moneyPerDay < 2000) {
+            alert("Средний уровень достатка");
+        } else {
+            alert("Высокий уровень достатка");
+        }
     }
 };
 
-// appData.moneyPerDay = (appData.detectDayBudget(appData.budgetMonth)).toFixed(1);
-
-// if (appData.moneyPerDay < 100) {
-//     alert("Минимальный уровень достатка");
-// } else if (appData.moneyPerDay < 2000) {
-//     alert("Средний уровень достатка");
-// } else {
-//     alert("Высокий уровень достатка");
-// }
-
-
+// for (let i in appData) {
+//     console.log(i + ": " + appData[i]);
+// };
