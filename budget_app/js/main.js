@@ -19,10 +19,7 @@ let optionalExpenses = document.querySelectorAll("optionalexpenses-item");
 
 
 function start() {
-    do {
-        money = +prompt("Ваш бюджет на месяц?", "");
-    } while (isNaN(money) || money == "" || money == null);
-    time = prompt("Введите дату в формате YYYY-MM-DD", "");
+
 }
 
 // start();
@@ -83,7 +80,7 @@ let appData = {
         alert(str);
     },
     moneyPerDay: function () {
-        appData.moneyPerDay = (appData.detectDayBudget(appData.budgetMonth)).toFixed(1);
+        appData.moneyPerDay = (appData.detectDayBudget(appData.budget)).toFixed(1);
 
         if (appData.moneyPerDay < 100) {
             alert("Минимальный уровень достатка");
