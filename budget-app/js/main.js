@@ -110,15 +110,9 @@ countBtn.addEventListener('click', function() {
 
 incomeItem.addEventListener('input', function() {
     let items = incomeItem.value;
-    // while(typeof(items) != 'string' || items.length == 0);
     appData.income = items.split(", ");
     appData.income.sort();
     incomeValue.textContent = appData.income;
-    // let str;
-    // appData.income.forEach( function(item, i){
-    //     str += (i + 1) + ". " + item + "\n";
-    // });
-    // incomeValue.textContent = str;
 });
 
 checkSavings.addEventListener('click', function () {
