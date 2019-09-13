@@ -1,0 +1,142 @@
+{
+    "result_type": 15,
+    "light": 0,
+    "buf_length": 4,
+    "list_idx": 0,
+    "page_idx": 0,
+    "ListVerifiedFields": {
+        "Count": 20,
+        "pFieldMaps": [{
+            "FieldType": 1,
+            "wFieldType": 1,
+            "wLCID": 0,
+            "Field_Visual": "RUS",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 2,
+            "wFieldType": 2,
+            "wLCID": 0,
+            "Field_Visual": "0305464347",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 5,
+            "wFieldType": 5,
+            "wLCID": 0,
+            "Field_Visual": "31.08.1984",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 68747270,
+            "wFieldType": 6,
+            "wLCID": 1049,
+            "Field_Visual": "ГОР.СОЧИ КРАСНОДАРСКОГО^КРАЯ",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 6,
+            "wFieldType": 6,
+            "wLCID": 0,
+            "Field_Visual": "GOR.SOCHI KRASNODARSKOGO^KRAIA",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 68747272,
+            "wFieldType": 8,
+            "wLCID": 1049,
+            "Field_Visual": "ОВСЯННИКОВА",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 8,
+            "wFieldType": 8,
+            "wLCID": 0,
+            "Field_Visual": "OVSIANNIKOVA",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 68747273,
+            "wFieldType": 9,
+            "wLCID": 1049,
+            "Field_Visual": "АННА",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 9,
+            "wFieldType": 9,
+            "wLCID": 0,
+            "Field_Visual": "ANNA",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 11,
+            "wFieldType": 11,
+            "wLCID": 0,
+            "Field_Visual": "Russian Federation",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 68747276,
+            "wFieldType": 12,
+            "wLCID": 1049,
+            "Field_Visual": "ЖЕН",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 12,
+            "wFieldType": 12,
+            "wLCID": 0,
+            "Field_Visual": "F",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 68747289,
+            "wFieldType": 25,
+            "wLCID": 1049,
+            "Field_Visual": "ОВСЯННИКОВА АННА ВИТАЛЬЕВНА",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 25,
+            "wFieldType": 25,
+            "wLCID": 0,
+            "Field_Visual": "OVSIANNIKOVA ANNA VITALEVNA",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 26,
+            "wFieldType": 26,
+            "wLCID": 0,
+            "Field_Visual": "RUS",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 38,
+            "wFieldType": 38,
+            "wLCID": 0,
+            "Field_Visual": "Russian Federation",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 68747393,
+            "wFieldType": 129,
+            "wLCID": 1049,
+            "Field_Visual": "ВИТАЛЬЕВНА",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 129,
+            "wFieldType": 129,
+            "wLCID": 0,
+            "Field_Visual": "VITALEVNA",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 68747397,
+            "wFieldType": 133,
+            "wLCID": 1049,
+            "Field_Visual": "Краснодарский край",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }, {
+            "FieldType": 185,
+            "wFieldType": 185,
+            "wLCID": 0,
+            "Field_Visual": "34",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }]
+    },
+    "Info": {
+        "DateTime": "2018-11-27T09:33:27.983",
+        "TransactionID": "b1dfc3db-dd07-4006-aa12-b6286507b062",
+        "ComputerName": "РЕГИСТРАТОР2018",
+        "UserName": "User",
+        "SDKVersion": "4.12.1.3934",
+        "FileVersion": "4.12.1.47",
+        "DeviceType": "7017 (OV 5Mp)",
+        "DeviceNumber": "0x099A42A7",
+        "DeviceLabelNumber": "012I1196"
+    }
+}
