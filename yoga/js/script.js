@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	// Timer
 
-	let deadline = '2019-10-21';
+	let deadline = '2019-09-21';
 
 	function getTimeRemaining(endtime) {
 		let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -63,12 +63,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		function updateClock() {
 			let t = getTimeRemaining(endtime);
-			hours.textContent = t.hours;
-			minutes.textContent = t.minutes;
-			seconds.textContent = t.seconds;
+			hours.textContent = t.hours.toString().padStart(2, '0');
+			minutes.textContent = t.minutes.toString().padStart(2, '0');
+			seconds.textContent = t.seconds.toString().padStart(2, '0');
 
 			if (t.total <= 0) {
 				clearInterval(timeInterval);
+				hours.textContent = "0";
+				minutes.textContent = "00";
+				seconds.textContent = "00";
 			}
 		}
 	}
