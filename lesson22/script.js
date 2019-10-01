@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 // function User(name, id) {
 //     this.name = name;
@@ -80,7 +80,7 @@ let btn = document.querySelector('button');
 
 btn.addEventListener('click', function() {
     console.log(this);
-    this.style.backgroundColor("#FF0000");
+    this.style.backgroundColor = "#FF0000";
     function showThis() {
         console.log(this);
     }
