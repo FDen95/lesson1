@@ -1,5 +1,5 @@
+'use strict';
 window.addEventListener('DOMContentLoaded', function () {
-	'use strict';
 
 	let tab = document.querySelectorAll('.info-header-tab'),
 		info = document.querySelector('.info-header'),
@@ -96,7 +96,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		overlay.style.display = 'block';
 		this.classList.add('more-splash');
 		document.body.style.overflow = 'hidden';
-	};
+	}
 
 	function hideModal() {
 		overlay.style.display = 'none';
@@ -105,7 +105,25 @@ window.addEventListener('DOMContentLoaded', function () {
 			element.classList.remove('more-splash');
 		});
 		document.body.style.overflow = '';
-	};
+	}
 
-	
+	class Options {
+		constructor(height, width, bg, fontSize, textAlign) {
+			this.height = height;
+			this.width = width;
+			this.bg = bg;
+			this.fontSize = fontSize;
+			this.textAlign = textAlign;
+		}
+		createDiv() {
+			let contacts = document.getElementById('contacts');
+			let div = document.createElement('div');
+			div.textContent = "12345";
+			div.className = "social";
+			contacts.append(div);
+		}
+	}
+
+	let options = new Options();
+	options.createDiv();	
 });
