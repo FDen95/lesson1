@@ -116,10 +116,10 @@ window.addEventListener('DOMContentLoaded', function () {
 			this.textAlign = textAlign;
 		}
 		createDiv() {
-			let contacts = document.getElementById('contacts');
+			let contacts = document.getElementById('about');
 			let div = document.createElement('div');
 			div.textContent = "12345";
-			div.className = "social";
+			div.className = "timer-title";
 			contacts.append(div);
 		}
 	}
