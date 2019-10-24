@@ -126,4 +126,62 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	let options = new Options();
 	options.createDiv();	
+
+	// Form
+
+	let message = {
+		loading: 'Загрузка...',
+		success: 'Спасибо! Скоро мы с вами свяжемся',
+		failure: 'Что-то пошло не так'
+	};
+
+	let formMain = document.querySelector('.main-form'),
+		form = document.getElementById('form'),
+		input = form.getElementsByTagName('input'),
+		statusMessage = document.createElement('div');
+		statusMessage.classList.add('status');
+	
+	// Даём имена input'ам
+	input[0].name = 'email';
+	input[1].name = 'tel';
+
+	requestForm(formMain);
+	requestForm(form);
+	
+	// Функция
+	function requestForm (form) {
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			
+			input = form.getElementsByTagName('input');
+			form.appendChild(statusMessage);
+	
+			let req = new XMLHttpRequest();
+			req.open('POST', 'server.php');
+			req.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+	
+			let obj = {};
+			let formData = new FormData(form);
+			formData.forEach((value, key) => {
+				obj[key] = value;
+			});
+			let json = JSON.stringify(obj);
+	
+			req.send(json);
+			req.addEventListener('readystatechange', () => {
+				if (req.readyState < 4) {
+					statusMessage.innerHTML = message.loading;
+				} else if (req.readyState === 4 && req.status == 200) {
+					statusMessage.innerHTML = message.success;
+				} else {
+					statusMessage.innerHTML = message.failure;
+				}
+			});
+	
+			for (let i = 0; i < input.length; i++) {
+				input[i].value = '';
+			}
+		});
+	}
+
 });
