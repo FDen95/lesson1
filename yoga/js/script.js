@@ -88,7 +88,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	more.addEventListener('click', showModal);
 	close.addEventListener('click', hideModal);
 
-	descriptionButton.forEach(function(element) {
+	descriptionButton.forEach(function (element) {
 		element.addEventListener('click', showModal);
 	});
 
@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	function hideModal() {
 		overlay.style.display = 'none';
 		more.classList.remove('more-splash');
-		descriptionButton.forEach(function(element) {
+		descriptionButton.forEach(function (element) {
 			element.classList.remove('more-splash');
 		});
 		document.body.style.overflow = '';
@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
 	let options = new Options();
-	options.createDiv();	
+	options.createDiv();
 
 	// Form
 
@@ -139,48 +139,60 @@ window.addEventListener('DOMContentLoaded', function () {
 		form = document.getElementById('form'),
 		input = form.getElementsByTagName('input'),
 		statusMessage = document.createElement('div');
-		statusMessage.classList.add('status');
-	
+	statusMessage.classList.add('status');
+
 	// Даём имена input'ам
 	input[0].name = 'email';
 	input[1].name = 'tel';
 
-	requestForm(formMain);
-	requestForm(form);
-	
+	requestForm(formMain)
+		.then(() => statusMessage.innerHTML = message.success)
+		.catch(() => statusMessage.innerHTML = message.failure);
+	requestForm(form)
+		.then(() => statusMessage.innerHTML = message.success)
+		.catch(() => statusMessage.innerHTML = message.failure);
+
 	// Функция
-	function requestForm (form) {
-		form.addEventListener('submit', (e) => {
+	function requestForm(form) {
+		return new Promise(function (resolve, reject) {
+			form.addEventListener('submit', (e) => {
 			e.preventDefault();
-			
+
 			input = form.getElementsByTagName('input');
 			form.appendChild(statusMessage);
-	
+
+
 			let req = new XMLHttpRequest();
 			req.open('POST', 'server.php');
 			req.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-	
+
 			let obj = {};
 			let formData = new FormData(form);
 			formData.forEach((value, key) => {
 				obj[key] = value;
 			});
 			let json = JSON.stringify(obj);
-	
+
 			req.send(json);
-			req.addEventListener('readystatechange', () => {
+			req.addEventListener('readystatechange', function () {
 				if (req.readyState < 4) {
-					statusMessage.innerHTML = message.loading;
-				} else if (req.readyState === 4 && req.status == 200) {
-					statusMessage.innerHTML = message.success;
+					return;//resolve();
+				//	statusMessage.innerHTML = message.loading;
+				} else 
+				if (req.readyState === 4 && req.status == 200) {
+					resolve();
+					//	statusMessage.innerHTML = message.success;
 				} else {
-					statusMessage.innerHTML = message.failure;
+					reject();
+					//	statusMessage.innerHTML = message.failure;
 				}
 			});
-	
+
 			for (let i = 0; i < input.length; i++) {
 				input[i].value = '';
 			}
+
+			});
 		});
 	}
 
