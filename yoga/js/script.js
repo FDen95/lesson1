@@ -239,6 +239,10 @@ window.addEventListener('DOMContentLoaded', function () {
 	});
 
 	dotsWrap.addEventListener('click', function(e) {
-		for (let i = 0; i ) /* 21:49 */
+		for (let i = 1; i < dots.length + 1; i++) {
+			if (event.target.classList.contains('dot') && event.target == dots[i-1]) {
+				currentSlide(i);
+			}
+		} 
 	});
 });
